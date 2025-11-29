@@ -1,8 +1,9 @@
 def analisar_sentimento(texto):
     texto_lower = texto.lower()
 
-    positivo = ["bom", "ótimo", "excelente", "melhor", "positivo", "ganhou", "recorde"]
-    negativo = ["ruim", "péssimo", "crise", "queda", "negativo", "perdeu", "fraude"]
+    # Palavras simples, mas funciona p/ atividade
+    positivo = ["bom", "ótimo", "excelente", "melhor", "positivo", "ganhou", "recorde", "sucesso"]
+    negativo = ["ruim", "péssimo", "crise", "queda", "negativo", "perdeu", "fraude", "derrota"]
 
     score = 0
 
@@ -14,9 +15,7 @@ def analisar_sentimento(texto):
         if n in texto_lower:
             score -= 1
 
-    if score > 0:
+    if score >= 0:
         return "POSITIVO"
-    elif score < 0:
-        return "NEGATIVO"
     else:
-        return "NEUTRO"
+        return "NEGATIVO"
